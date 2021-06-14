@@ -29,7 +29,33 @@ public void logInValidCredentials() {
 @Test (priority = 5)
 public void logInInvalidCredentials() {
 	mainNavigation.clickOnSignInNavigationButton();
-	for (int i = 3; i < 8; i++) {
+	for (int i = 3; i < 5; i++) {
+		authenticationPage.clearLoginInputFields();
+		authenticationPage.fillLoginEmailField(excelReader.getStringData(logInTestsSheetName, 7, i));
+		authenticationPage.fillLoginPasswordField(excelReader.getStringData(logInTestsSheetName, 8, i));
+		authenticationPage.clickOnSignInButton();
+		assertEquals(authenticationPage.visibilityOfLoginErrorMessage(), true);
+		assertEquals(authenticationPage.getLoginErrorMessageText(), excelReader.getStringData(logInTestsSheetName, 12, i));
+		driver.navigate().refresh();
+	}
+	
+}
+@Test (priority = 6)
+public void logInEmptyCredentials() {
+	mainNavigation.clickOnSignInNavigationButton();
+		authenticationPage.clearLoginInputFields();
+		authenticationPage.fillLoginEmailField(excelReader.getStringData(logInTestsSheetName, 7, 5));
+		authenticationPage.fillLoginPasswordField(excelReader.getStringData(logInTestsSheetName, 8, 5));
+		authenticationPage.clickOnSignInButton();
+		assertEquals(authenticationPage.visibilityOfLoginErrorMessage(), true);
+		assertEquals(authenticationPage.getLoginErrorMessageText(), excelReader.getStringData(logInTestsSheetName, 12, 5));
+	
+	}
+	
+@Test (priority = 7)
+public void logInUnmatchingCredentials() {
+	mainNavigation.clickOnSignInNavigationButton();
+	for (int i = 6; i < 8; i++) {
 		authenticationPage.clearLoginInputFields();
 		authenticationPage.fillLoginEmailField(excelReader.getStringData(logInTestsSheetName, 7, i));
 		authenticationPage.fillLoginPasswordField(excelReader.getStringData(logInTestsSheetName, 8, i));
