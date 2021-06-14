@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jun 10 22:49:59 CEST 2021</td>
+<td>Started on:</td><td>Mon Jun 14 15:33:13 CEST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>43 seconds (43255 ms)</td>
+<tr><td>Total time:</td><td>117 seconds (117015 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,8 +76,8 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='tests.LogInTests.logInInvalidCredentials()'><b>logInInvalidCredentials</b><br>Test class: tests.LogInTests</td>
-<td><div><pre>java.lang.AssertionError: expected [There is 2 error
-An email address required.] but found [There is 1 error
+<td><div><pre>java.lang.AssertionError: expected [There are 2 errors
+An email address and password are required.] but found [There is 1 error
 An email address required.]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
@@ -85,7 +85,7 @@ An email address required.]
 	at org.testng.Assert.assertEquals(Assert.java:122)
 	at org.testng.Assert.assertEquals(Assert.java:629)
 	at org.testng.Assert.assertEquals(Assert.java:639)
-	at tests.LogInTests.logInInvalidCredentials(LogInTests.java:36)
+	at tests.LogInTests.logInInvalidCredentials(LogInTests.java:38)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -114,9 +114,9 @@ An email address required.]
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1883971879", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1883971879'><pre>java.lang.AssertionError: expected [There is 2 error
-An email address required.] but found [There is 1 error
+</pre></div><a href='#' onClick='toggleBox("stack-trace1211586911", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1211586911'><pre>java.lang.AssertionError: expected [There are 2 errors
+An email address and password are required.] but found [There is 1 error
 An email address required.]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
@@ -124,7 +124,7 @@ An email address required.]
 	at org.testng.Assert.assertEquals(Assert.java:122)
 	at org.testng.Assert.assertEquals(Assert.java:629)
 	at org.testng.Assert.assertEquals(Assert.java:639)
-	at tests.LogInTests.logInInvalidCredentials(LogInTests.java:36)
+	at tests.LogInTests.logInInvalidCredentials(LogInTests.java:38)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -154,7 +154,7 @@ An email address required.]
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>10</td>
+<td>15</td>
 <td>tests.LogInTests@6b57696f</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -165,14 +165,24 @@ An email address required.]
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='tests.LogInTests.forgotYourPasswordTests()'><b>forgotYourPasswordTests</b><br>Test class: tests.LogInTests</td>
+<td></td>
+<td>13</td>
+<td>tests.LogInTests@6b57696f</td></tr>
+<tr>
 <td title='tests.LogInTests.logInValidCredentials()'><b>logInValidCredentials</b><br>Test class: tests.LogInTests</td>
 <td></td>
-<td>4</td>
+<td>6</td>
+<td>tests.LogInTests@6b57696f</td></tr>
+<tr>
+<td title='tests.LogInTests.logInByPressingEnter()'><b>logInByPressingEnter</b><br>Test class: tests.LogInTests</td>
+<td></td>
+<td>10</td>
 <td>tests.LogInTests@6b57696f</td></tr>
 <tr>
 <td title='tests.LogInTests.logOutTest()'><b>logOutTest</b><br>Test class: tests.LogInTests</td>
 <td></td>
-<td>7</td>
+<td>17</td>
 <td>tests.LogInTests@6b57696f</td></tr>
 </table><p>
 </body>

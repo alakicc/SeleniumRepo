@@ -9,6 +9,7 @@ WebDriver driver;
 WebElement signInNavigationButton;
 WebElement signOutNavigationButton;
 WebElement myAccountNavigationButton;
+
 By signInNavigationButtonLocator = By.className("login");
 By singOutNavigationButtonLocator = By.className("logout");
 By myAccountNavigationButtonLocator = By.className("account");

@@ -7,6 +7,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import pages.AuthenticationPage;
+import pages.CreateAnAccountPage;
+import pages.ForgotYourPasswordPage;
 import pages.MainNavigation;
 
 public class BaseTests {
@@ -14,11 +16,16 @@ public class BaseTests {
 	ExcelReader excelReader;
 	MainNavigation mainNavigation;
 	AuthenticationPage authenticationPage;
+	CreateAnAccountPage createAnAccountPage;
+	ForgotYourPasswordPage forgotYourPasswordPage;
+	
+	//URLs and sheet names
 	String homeUrl;
 	String logInTestsSheetName;
+	String createAnAccountSheetName;
 	
 	@BeforeClass
-	public void preSihTestova() throws IOException {
+	public void setUp() throws IOException {
 		System.setProperty("webdriver.chrome.driver", "driver-lib\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
@@ -26,11 +33,14 @@ public class BaseTests {
 		excelReader =  new ExcelReader("data/AutomationPracticeTestPlan.xlsx");
 		mainNavigation = new MainNavigation(driver);
 		authenticationPage = new AuthenticationPage(driver);
+		createAnAccountPage = new CreateAnAccountPage(driver);
+		forgotYourPasswordPage = new ForgotYourPasswordPage(driver);
 		homeUrl = "http://automationpractice.com/";
-		logInTestsSheetName = "Login Test";
+		logInTestsSheetName = "Login Tests";
+		createAnAccountSheetName = "Create An Account Tests";
 	}
 	@AfterClass
-	public void posleSihTestova() {
-		driver.close();
+	public void tearDown() {
+		driver.quit();
 	}
 }
