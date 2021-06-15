@@ -3,6 +3,7 @@ package pages;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -54,9 +55,10 @@ public int getNumberOfAddresses() {
 }
 
 public void deleteAddress() throws InterruptedException {
-		deleteAddressButton.click();
+		getDeleteAddressButton().click();
 		Thread.sleep(2000);
-		driver.switchTo().alert().accept();
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
 	}
 
 public void clickOnUpdateAddressButton() {

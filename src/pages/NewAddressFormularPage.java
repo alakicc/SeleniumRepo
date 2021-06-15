@@ -9,7 +9,7 @@ WebElement saveButton;
 WebElement newAddressErrorMessage;
 
 By saveButtonLocator = By.id("submitAddress");
-By newAddressErrorMessageLocator = By.cssSelector("alert.alert-danger");
+By newAddressErrorMessageLocator = By.cssSelector(".alert.alert-danger");
 
 	public NewAddressFormularPage(WebDriver driver) {
 		super(driver);
@@ -50,7 +50,7 @@ By newAddressErrorMessageLocator = By.cssSelector("alert.alert-danger");
 	}
 	
 	public boolean visibilityOfSaveButton() {
-		if(saveButton.isDisplayed()) {
+		if(getSaveButton().isDisplayed()) {
 			return true;
 		} else {
 			return false;
