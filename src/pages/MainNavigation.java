@@ -62,6 +62,9 @@ public boolean visibilityOfSignOutNavigationButton() {
 		}
 }
 
+	public void clickOnMyAccountNavigationButton() {
+		getMyAccountNavigationButton().click();
+	}
 
 
 }

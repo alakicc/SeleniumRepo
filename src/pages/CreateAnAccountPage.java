@@ -131,12 +131,14 @@ public class CreateAnAccountPage {
 
 //Dropdown menus methods
 	public void selectFromStateDropdownMenu(String stateName) {
-		Select stateDropdownMenu = new Select(getAddressSectionStateDropdownMenu());
+		addressSectionStateDropdownMenu = driver.findElement(addressSectionStateDropdownMenuLocator);
+		Select stateDropdownMenu = new Select(addressSectionStateDropdownMenu);
 		stateDropdownMenu.selectByVisibleText(stateName);
 	}
 	
 	public void selectAddressSectionCountryDropdownMenu(String country) {
-		Select stateDropdownMenu = new Select(getAddressSectionCountryDropdownMenu());
+		addressSectionCountryDropdownMenu = driver.findElement(addressSectionCountryDropdownMenuLocator);
+		Select stateDropdownMenu = new Select(addressSectionCountryDropdownMenu);
 		stateDropdownMenu.selectByVisibleText(country);
 	}
 
@@ -150,7 +152,7 @@ public class CreateAnAccountPage {
 	}
 	
 	public void fillPersonalInfoEmailField(String emailAddress) {
-		getPersonalInfoFirstNameField().sendKeys(emailAddress);
+		getPersonalInfoEmailAddressField().sendKeys(emailAddress);
 	}
 	
 	public void fillPersonalInfoPasswordField(String password) {
