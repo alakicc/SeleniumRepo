@@ -7,8 +7,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import pages.AuthenticationPage;
+import pages.CartPage;
 import pages.CreateAnAccountPage;
 import pages.ForgotYourPasswordPage;
+import pages.HomePage;
 import pages.MainNavigation;
 import pages.MyAccountPage;
 import pages.MyAddressesPage;
@@ -28,12 +30,16 @@ public class BaseTests {
 	NewAddressFormularPage newAddressFormularPage;
 	MyPersonalInformationPage myPersonalInformationPage;
 	MyWishlistsPage myWishlistsPage;
+	HomePage homePage;
+	CartPage cartPage;
+	//CartPage cartPage;
 	
 	//URLs and sheet names
 	String homeUrl;
 	String logInTestsSheetName;
 	String createAnAccountSheetName;
 	String myAccountTestsSheetName;
+	String addToCartTestsSheetName;
 	
 	@BeforeClass
 	public void setUp() throws IOException {
@@ -51,11 +57,14 @@ public class BaseTests {
 		newAddressFormularPage = new NewAddressFormularPage(driver);
 		myPersonalInformationPage = new MyPersonalInformationPage(driver);
 		myWishlistsPage = new MyWishlistsPage(driver);
+		homePage = new HomePage(driver);
+		cartPage = new CartPage(driver);
 		
 		homeUrl = "http://automationpractice.com/";
 		logInTestsSheetName = "Login Tests";
 		createAnAccountSheetName = "Create An Account Tests";
 		myAccountTestsSheetName = "My Account Tests";
+		addToCartTestsSheetName = "Add To Cart Tests";
 	}
 	@AfterClass
 	public void tearDown() {
